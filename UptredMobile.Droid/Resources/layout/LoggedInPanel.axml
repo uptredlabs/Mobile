@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/frameLayout1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linearLayout1"
+        p1:layout_gravity="center">
+        <TextView
+            p1:text="Logged in as"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/textView1"
+            p1:gravity="center_horizontal" />
+        <TextView
+            p1:text="(user)"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:id="@+id/lblVerifier"
+            p1:layout_width="wrap_content"
+            p1:layout_height="wrap_content"
+            p1:layout_gravity="center_horizontal"
+            p1:textStyle="bold" />
+        <Space
+            p1:layout_width="match_parent"
+            p1:layout_height="36.2dp"
+            p1:id="@+id/space1" />
+        <Button
+            p1:text="Upload New Clip"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnUploadNew" />
+        <Button
+            p1:text="Resume Last Upload"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnUploadResume"
+            p1:visibility="gone" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/frameLayout1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linearLayout1"
+        p1:layout_gravity="center">
+        <TextView
+            p1:text="0% Uploaded"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:id="@+id/txtProgress"
+            p1:gravity="center"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="40dp"
+            p1:id="@+id/linearLayout3"
+            p1:layout_marginLeft="10dp"
+            p1:layout_marginRight="10dp">
+            <ProgressBar
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                p1:layout_width="286.9dp"
+                p1:layout_height="match_parent"
+                p1:id="@+id/progressBar"
+                p1:progress="0"
+                p1:max="100"
+                p1:layout_weight="9" />
+            <Button
+                p1:text="Pause"
+                p1:id="@+id/btnPause"
+                p1:layout_width="wrap_content"
+                p1:layout_height="match_parent"
+                p1:layout_weight="1"
+                p1:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <Space
+            p1:layout_width="match_parent"
+            p1:layout_height="11.7dp"
+            p1:id="@+id/space2" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:id="@+id/linearLayout2"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:layout_marginLeft="10dp"
+            p1:layout_marginRight="10dp">
+            <TextView
+                p1:text="Title:"
+                p1:textAppearance="?android:attr/textAppearanceMedium"
+                p1:id="@+id/textView4"
+                p1:layout_width="wrap_content"
+                p1:layout_height="match_parent"
+                p1:gravity="center" />
+            <EditText
+                p1:layout_width="match_parent"
+                p1:layout_height="match_parent"
+                p1:id="@+id/txtTitle" />
+        </LinearLayout>
+        <Space
+            p1:layout_width="match_parent"
+            p1:layout_height="10.0dp"
+            p1:id="@+id/space1" />
+        <TextView
+            p1:text="Description:"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/textView5"
+            p1:layout_marginLeft="10dp" />
+        <EditText
+            p1:inputType="textMultiLine"
+            p1:layout_width="match_parent"
+            p1:layout_height="169.3dp"
+            p1:id="@+id/txtDesc"
+            p1:background="#AAA"
+            p1:layout_marginLeft="10dp"
+            p1:layout_marginRight="10dp"
+            p1:gravity="top" />
+        <CheckBox
+            p1:text="Public"
+            p1:layout_width="wrap_content"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/chkPublic"
+            p1:gravity="center"
+            p1:layout_gravity="right"
+            p1:layout_marginRight="10.0dp" />
+    </LinearLayout>
+</FrameLayout>

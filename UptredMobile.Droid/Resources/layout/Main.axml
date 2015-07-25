@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/frameLayout1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linearLayout1"
+        p1:layout_gravity="center">
+        <TextView
+            p1:text="Uptred Mobile"
+            p1:textAppearance="?android:attr/textAppearanceLarge"
+            p1:id="@+id/textView1"
+            p1:layout_width="wrap_content"
+            p1:layout_height="wrap_content"
+            p1:layout_gravity="center_horizontal" />
+        <Button
+            p1:text="Authorize Vimeo Account"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnAuthVimeo" />
+        <Button
+            p1:text="Authorize YouTube Account"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/btnAuthYouTube" />
+    </LinearLayout>
+</FrameLayout>
