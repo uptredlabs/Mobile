@@ -91,8 +91,8 @@ namespace Uptred.Mobile
                 VimeoInfo = null;
                 return;
             }
-            XmlSerializer xs = new XmlSerializer(typeof(VimeoUploadInformation));
-            using (TextReader tr = new StringReader(meta)) VimeoInfo = (VimeoUploadInformation)xs.Deserialize(tr);
+            XmlSerializer xs = new XmlSerializer(typeof(VimeoUploadTask));
+            using (TextReader tr = new StringReader(meta)) VimeoInfo = (VimeoUploadTask)xs.Deserialize(tr);
         }
 
         static void loadYouTube()
@@ -103,12 +103,12 @@ namespace Uptred.Mobile
                 YouTubeInfo = null;
                 return;
             }
-            XmlSerializer xs = new XmlSerializer(typeof(YouTubeUploadInformation));
-            using (TextReader tr = new StringReader(meta)) YouTubeInfo = (YouTubeUploadInformation)xs.Deserialize(tr);
+            XmlSerializer xs = new XmlSerializer(typeof(YouTubeUploadTask));
+            using (TextReader tr = new StringReader(meta)) YouTubeInfo = (YouTubeUploadTask)xs.Deserialize(tr);
         }
 
-        public static VimeoUploadInformation VimeoInfo = null;
-        public static YouTubeUploadInformation YouTubeInfo = null;
+        public static VimeoUploadTask VimeoInfo = null;
+        public static YouTubeUploadTask YouTubeInfo = null;
 
         public static VimeoHook VimeoHook = null;
         public static YouTubeHook YouTubeHook = null;

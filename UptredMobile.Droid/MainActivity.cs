@@ -2,11 +2,11 @@
 using Android.Content;
 using Android.Widget;
 using Android.OS;
+using Android.Content.PM;
 
 namespace Uptred.Mobile
 {
-    [Activity (Label = "Uptred Mobile", MainLauncher = true, Icon = "@drawable/icon")]
-    
+    [Activity (Label = "Uptred Mobile", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
 		protected override void OnCreate (Bundle bundle)

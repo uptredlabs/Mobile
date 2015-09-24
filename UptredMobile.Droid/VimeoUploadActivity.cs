@@ -10,6 +10,16 @@ namespace Uptred.Mobile
     [Activity(Label = "Uptred Mobile")]
     public class VimeoUploadActivity : UploadActivityBase
     {
+        protected override bool IsDone()
+        {
+            return Settings.VimeoInfo.Done;
+        }
+
+        protected override void SetDone()
+        {
+            Settings.VimeoInfo.Done = true;
+        }
+
         protected override void OnUploadResume()
         {
             if (!Settings.VimeoInfo.Done) Upload();
@@ -88,14 +98,14 @@ namespace Uptred.Mobile
                     }
                 }
                 Settings.VimeoInfo.LastByte = feedback.LastByte;
-                if (feedback.LastByte >= feedback.ContentSize)
+                if (Settings.VimeoInfo.VideoId != null && Settings.VimeoInfo.VideoId != "")
                 {
                     //Upload Completed.
                     Console.WriteLine(string.Format("Upload completed. Video ID: {0}. Applying Metadata...", Settings.VimeoInfo.VideoId));
                     FindViewById<TextView>(Resource.Id.txtProgress).Text = "Applying Metadata...";
                 }
 
-                _fraction = 0;
+                //_fraction = 0;
                 Settings.SaveInfos();
             });
         }

@@ -13,7 +13,7 @@ namespace Uptred.Mobile
 		{
 			if (builder == null) {
 				builder = new Notification.Builder (activity)
-				.SetSmallIcon (Resource.Drawable.Icon);
+				.SetSmallIcon (Resource.Drawable.logotransparent);
 			}
 			builder.SetContentTitle (title).SetContentText (text);
 

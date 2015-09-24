@@ -19,7 +19,7 @@ using Uptred.Vimeo;
 
 namespace VimeoUploaderAndroid
 {
-	public class YouTubeUploadInformation
+	public class YouTubeUploadTask
 	{
 	}
 

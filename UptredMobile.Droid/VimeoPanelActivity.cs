@@ -29,7 +29,7 @@ namespace Uptred.Mobile
                     try
                     {
                         //New Upload: Get ticket, do meta, open upload activity
-                        var info = new VimeoUploadInformation();
+                        var info = new VimeoUploadTask();
                         info.Path = path;
                         info.Ticket = Settings.VimeoHook.GetTicket();
                         Settings.VimeoInfo = info;
@@ -57,7 +57,7 @@ namespace Uptred.Mobile
             FindViewById<Button>(Resource.Id.btnUploadResume).Click += delegate
             {
                 //Resume Upload: Open upload activity
-                VimeoUploadInformation info = Settings.VimeoInfo;
+                VimeoUploadTask info = Settings.VimeoInfo;
                 if (File.Exists(info.Path))
                 {
                     StartActivity(new Intent(this, typeof(VimeoUploadActivity)));
@@ -108,7 +108,6 @@ namespace Uptred.Mobile
                     Settings.VimeoHook = VimeoHook.ReAuthorize(
                         accessToken: Settings.VimeoAccessToken,
                         clientId: ApiKeys.VimeoClientId,
-                        secret: ApiKeys.VimeoClientSecret,
                         redirect: ApiKeys.VimeoRedirectURL);
                     Console.WriteLine("Logged in as " + Settings.VimeoHook.User["name"].ToString());
                 }

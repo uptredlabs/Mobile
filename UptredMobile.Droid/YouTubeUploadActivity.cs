@@ -11,7 +11,17 @@ namespace Uptred.Mobile
     [Activity(Label = "Uptred Mobile")]
 	public class YouTubeUploadActivity : UploadActivityBase
     {
-		protected override void OnUploadResume ()
+        protected override bool IsDone()
+        {
+            return Settings.YouTubeInfo.Done;
+        }
+
+        protected override void SetDone()
+        {
+            Settings.YouTubeInfo.Done = true;
+        }
+
+        protected override void OnUploadResume ()
 		{
 			base.OnUploadResume ();
 			if (!Settings.YouTubeInfo.Done)
@@ -73,7 +83,7 @@ namespace Uptred.Mobile
                         try
                         {
                             var url = Settings.YouTubeHook.GetUploadSessionUrl(Settings.YouTubeInfo.Path);
-                            if (!string.IsNullOrWhiteSpace(url))
+                            if (!Core.IsNullOrWhiteSpace(url))
                             {
                                 Settings.YouTubeInfo.Url = url;
                                 Settings.YouTubeInfo.LastByte = 0;

@@ -11,7 +11,7 @@ namespace Uptred.Mobile
     {
         protected bool uploading = false;
         protected bool shown = true;
-
+        protected bool created = false;
         protected bool _paused = false;
         protected bool paused
         {
@@ -45,9 +45,20 @@ namespace Uptred.Mobile
         {
         }
 
+        protected virtual bool IsDone()
+        {
+            return true;
+        }
+
+        protected virtual void SetDone()
+        {
+
+        }
+
         protected void updatePercentage()
         {
-            if (Settings.YouTubeInfo.Done)
+            if (!created) return;
+            if (IsDone())
             {
                 if (shown)
                 {
@@ -72,11 +83,8 @@ namespace Uptred.Mobile
             else
             {
                 decimal percent = Math.Min(100, 100 * (decimal)(_last + _fraction) / (decimal)(_total + 1));
-                if (percent >= 100)
-                {
-                    Settings.YouTubeInfo.Done = true;
-                    Settings.SaveInfos();
-                }
+                if (percent >= 100) percent = 100;
+
                 var text = string.Format("{0}% Uploaded", (percent).ToString("N2"));
                 if (shown)
                 {
@@ -104,6 +112,7 @@ namespace Uptred.Mobile
             FindViewById<EditText>(Resource.Id.txtDesc).AfterTextChanged += onDescChange;
             FindViewById<CheckBox>(Resource.Id.chkPublic).CheckedChange += onPublicChange;
             FindViewById<Button>(Resource.Id.btnPause).Click += onPauseClick;
+            created = true;
         }
 
         protected virtual void onPauseClick(object sender, EventArgs e)

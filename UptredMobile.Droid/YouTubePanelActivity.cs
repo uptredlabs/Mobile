@@ -29,7 +29,7 @@ namespace Uptred.Mobile
                     try
                     {
                         //New Upload: Get ticket, do meta, open upload activity
-                        var info = new YouTubeUploadInformation();
+                        var info = new YouTubeUploadTask();
                         info.Path = path;
                         info.Url = Settings.YouTubeHook.GetUploadSessionUrl(info.Path);
                         Settings.YouTubeInfo = info;
